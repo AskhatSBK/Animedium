@@ -108,10 +108,9 @@ footer {
 }
 
 .anime-description img {
-    max-width: 300px;
-    height: auto;
+    width: 300px;  
+    height: auto;  
     margin-bottom: 20px;
-    
 }
 
 a {
