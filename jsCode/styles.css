@@ -40,7 +40,15 @@ h1, h2, h3 {
     padding: 15px;
 }
 
-.featured-anime, .anime-grid {
+.featured-anime{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 70vh;
+}
+
+.anime-grid {
+    width: 75%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -148,6 +156,33 @@ footer {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+.filter-sidebar {
+    position: fixed;
+    top: 60px; /* Высота header */
+    right: 0;
+    width: 250px;
+    height: calc(100vh - 100px); /* Высота header + footer */
+    background-color: #f8f8f8;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.filter-sidebar h2 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.filter-sidebar label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.filter-sidebar input[type="checkbox"] {
+    margin-right: 8px;
 }
 
 #myVideo {
