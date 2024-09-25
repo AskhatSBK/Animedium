@@ -185,6 +185,7 @@ a {
     margin-right: 8px;
 }
 
+
 #myVideo {
     position: fixed;
     right: 0;
@@ -192,7 +193,7 @@ a {
     min-width: 100%;
     min-height: 100%;
   }
-
+  
 @keyframes fadeIn {
     from {
         opacity: 0;
