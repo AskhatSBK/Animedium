@@ -20,17 +20,17 @@
             }
     </style>
 </head> 
+<!-- <div class="profile-container">
+    <a href="profile.html" class="profile-button">
+        <img src="profile-icon.png" alt="Profile Icon" class="profile-icon">
+    </a>
+</div> -->
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="anime-list.html">Anime List</a></li>
-            </ul>
-            <div class="profile-container">
-                <a href="profile.html" class="profile-button">
-                    <img src="profile-icon.png" alt="Profile Icon" class="profile-icon">
-                </a>
+        <nav class="navbar navbar-expand-lg navbar-light" style="padding-left: 45%;">
+            <div class="collapse navbar-collapse px-2" id="navbarSupportedContent">
+                <a class="nav-link px-2" href="index.html">Home</a>
+                <a class="nav-link px-2" href="anime-list.html">Anime List</a>
             </div>
         </nav>
         <h1>Welcome to Animedium</h1>
@@ -71,8 +71,16 @@
         <!-- ... rest of your HTML ... -->
     </main>
     <footer>
-        <p>&copy; 2024 Animedium.</p>
-        <p>Bexultan Ashenov & Sabitkhanov Askhat</p>
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <p>&copy; 2024 Animedium.</p>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <p>Bexultan Ashenov & Sabitkhanov Askhat</p>
+            </div>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
