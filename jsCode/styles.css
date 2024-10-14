@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: Trebuchet MS, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .col {
@@ -37,6 +37,7 @@ nav ul li a:hover {
 }
 
 h1, h2, h3 {
+    font-weight: bold;
     margin: 15px 0;
 }
 
@@ -69,6 +70,7 @@ h1, h2, h3 {
     text-align: center !important;
     transition: transform 0.3s, box-shadow 0.3s !important;
     animation: fadeInUp 1s ease-in-out !important;
+    font-weight: bold !important;
 }
 
 .card:hover {
@@ -133,7 +135,7 @@ footer {
     align-items: center;
     padding: 20px;
     text-decoration: none;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 1s ease-in-out;   
 }
 
 .anime-description img {
