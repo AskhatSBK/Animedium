@@ -20,3 +20,21 @@ function closePopupOnClickOutside(event) {
         closePopup();
     }
 }
+
+const subscribeBtn = document.getElementById('subscribeBtn');
+const popupForm = document.getElementById('popupForm');
+const closeBtn = document.getElementsByClassName('close')[0];
+
+subscribeBtn.onclick = function() {
+    popupForm.style.display = "block";
+}
+
+closeBtn.onclick = function() {
+    popupForm.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target === popupForm) {
+        popupForm.style.display = "none";
+    }
+}

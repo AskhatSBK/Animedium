@@ -135,8 +135,7 @@
         body.dark-theme footer {
             background-color: #111;
         }
-
-        /* Dark mode button */
+        
         #theme-toggle {
             margin-top: 20px;
         }
@@ -215,7 +214,20 @@
                   </div>
               </div>
           </div>
-      </section>      
+      </section>
+      <button id="subscribeBtn">Subscribe</button>
+
+      <div id="popupForm" class="popup">
+          <div class="popup-content">
+              <span class="close">&times;</span>
+              <h2>Subscribe</h2>
+              <form id="subscribeForm">
+                  <label for="email">Email:</label>
+                  <input type="email" id="subscribeEmail" required>
+                  <input type="submit" value="Submit">
+              </form>
+          </div>
+      </div>      
       <button id="theme-toggle">Dark-mode</button>
       <p id="datetime"></p>
     </main>
@@ -301,5 +313,6 @@
         });
     </script>
     <script src="../JavaScript.js"></script>
+    
 </body>
 </html>
