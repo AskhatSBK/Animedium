@@ -18,8 +18,8 @@
         }
         
         .accordion-item {
-          background-color: #f2f2f2;
-          border-bottom: 1px solid #ddd;
+          background-color: #f2f2f21c;
+          border-bottom: 1px solid #dddddd00;
           cursor: pointer;
         }
         
@@ -41,7 +41,7 @@
         
         .accordion-content {
           padding: 15px;
-          background-color: #fff;
+          background-color: #ffffff28;
           max-height: 0;
           overflow: hidden;
           transition: max-height 0.3s ease; /* Smooth transition */
@@ -63,7 +63,7 @@
         }
 
         .popup-content {
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.253);
         margin: 15% auto;
         padding: 20px;
         border-radius: 5px;
@@ -99,8 +99,11 @@
         }
 
         .dark-theme {
-        --bg-color: #333333;
-        --text-color: #ffffff;
+        --bg-color: #151515;
+        }
+        
+        .dark-theme-text {
+          --text-color:  #eeeeee;
         }
         </style>
 </head>
@@ -193,7 +196,8 @@
         const body = document.body;
 
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-theme');    
+            body.classList.toggle('dark-theme');  
+            body.classList.toggle('dark-theme-text');    
         });
                 //
         const dateTimeElement = document.getElementById("datetime");
