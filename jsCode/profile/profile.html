@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="profile.css">
     <style>
-
         .accordion {
           width: 100%;
           max-width: 600px; /* Adjust as needed */
@@ -105,6 +104,30 @@
         .dark-theme-text {
           --text-color:  #eeeeee;
         }
+
+        #popup {
+        display: none; /* Initially hidden */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        #popup-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 300px;
+        }
+
+        .profile-card-dark {
+          --bg-color: #151515 !important;
+        }
         </style>
 </head>
 <body>
@@ -125,7 +148,7 @@
                     Name: <input type="text" id="name" name="name"><span id="nameError" class="error"></span><br><br>
                     Email: <input type="email" id="email" name="email"><span id="emailError" class="error"></span><br><br>
                     Age: <input type="number" id="age" name="age" min="18"><span id="ageError" class="error"></span><br><br>
-                    <input type="submit" value="Submit">
+                    <input onclick="openPopup()" type="submit" value="Submit">
                 </form>
             </div>
         </section>
@@ -148,6 +171,13 @@
           <div class="accordion-content">
             <p>Answer 3 goes here.  This is some example content for the third accordion item.</p>
           </div>
+        </div>
+      </div>
+
+      <div id="popup">
+        <div id="popup-content">
+          <span onclick="closePopup()" class="close">&times;</span>
+          <p>This is a popup box.</p>
         </div>
       </div>
       
@@ -196,13 +226,22 @@
         const body = document.body;
 
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-theme');  
+            body.classList.toggle('dark-theme'); 
             body.classList.toggle('dark-theme-text');    
+            body.classList.toggle('profile-card-dark');
         });
                 //
         const dateTimeElement = document.getElementById("datetime");
         const now = new Date();
         dateTimeElement.textContent = now.toLocaleString();
+
+        function openPopup() {
+         document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+          document.getElementById("popup").style.display = "none";
+        }
         </script>
 </body>
 </html>
