@@ -106,23 +106,40 @@
         }
 
         #popup {
-        display: none; /* Initially hidden */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
         }
 
         #popup-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 300px;
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .profile-card-dark {
@@ -132,6 +149,7 @@
 </head>
 <body>
     <header>
+      <p id="date-time"></p>
         <nav class="navbar navbar-expand-lg navbar-light" style="padding-left: 45%;">
             <div class="collapse navbar-collapse px-2" id="navbarSupportedContent">
                 <a class="nav-link px-2" href="../index.html">Home</a>
@@ -174,11 +192,11 @@
         </div>
       </div>
 
-      <div id="popup">
-        <div id="popup-content">
-          <span onclick="closePopup()" class="close">&times;</span>
-          <p>This is a popup box.</p>
-        </div>
+      <div id="popup" onclick="closePopupOnClickOutside(event)">
+          <div id="popup-content" onclick="event.stopPropagation()">
+              <span class="close-btn" onclick="closePopup()">&times;</span>
+              <p>This is a popup window with rounded corners!</p>
+          </div>
       </div>
       
       <button id="theme-toggle">Переключить тему</button>
@@ -235,13 +253,22 @@
         const now = new Date();
         dateTimeElement.textContent = now.toLocaleString();
 
-        function openPopup() {
-         document.getElementById("popup").style.display = "block";
-        }
+    function openPopup() {
+        document.getElementById("popup").style.display = "block";
+    }
 
-        function closePopup() {
-          document.getElementById("popup").style.display = "none";
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    function closePopupOnClickOutside(event) {
+        if (event.target === document.getElementById("popup")) {
+            closePopup();
         }
-        </script>
+    }
+
+</script>
+<script src="../JavaScript.js"></script>
+
 </body>
 </html>
