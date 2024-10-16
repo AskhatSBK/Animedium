@@ -5,114 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile - Animedium</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="profile.css">
     <style>
-
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        body.dark-theme {
+            background-color: #333;
+            color: white;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        .profile-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .profile-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        body.dark-theme .profile-card {
+            background-color: #444;
+            color: white;
+        }
+        input[type="text"], input[type="email"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 0.9rem;
+        }
         .accordion {
-          width: 100%;
-          max-width: 600px; /* Adjust as needed */
-          margin: 20px auto;
-          border-radius: 5px;
-          overflow: hidden; /* Prevents content from overflowing */
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
         }
-        
-        .accordion-item {
-          background-color: #f2f2f21c;
-          border-bottom: 1px solid #dddddd00;
-          cursor: pointer;
-        }
-        
-        .accordion-item:last-child {
-          border-bottom: none;
-        }
-        
         .accordion-item h3 {
-          padding: 15px;
-          margin: 0;
-          font-size: 18px;
-          font-weight: bold;
-          transition: background-color 0.3s ease; /* Smooth transition */
+            font-size: 1.2rem;
         }
-        
-        .accordion-item h3:hover {
-          background-color: #e0e0e0;
+        #theme-toggle {
+            margin-top: 20px;
         }
-        
-        .accordion-content {
-          padding: 15px;
-          background-color: #ffffff28;
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.3s ease; /* Smooth transition */
-        }
-        
-        .accordion-item.active .accordion-content {
-          max-height: 200px; /* Adjust as needed */
-        }
-
-        #popup {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
+        html, body {
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-        z-index: 1000; /* Ensure it's on top */
+        margin: 0;
+        display: flex;
+        flex-direction: column;
         }
 
-        .popup-content {
-        background-color: rgba(255, 255, 255, 0.253);
-        margin: 15% auto;
-        padding: 20px;
-        border-radius: 5px;
-        max-width: 400px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        main {
+        flex: 1;
         }
 
-        .close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        box-sizing: border-box;
-        }
-
-        button {
-        background-color: #4CAF50;
+        footer {
+        background-color: #343a40;
         color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
         }
-
-        .dark-theme {
-        --bg-color: #151515;
-        }
-        
-        .dark-theme-text {
-          --text-color:  #eeeeee;
-        }
-        </style>
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light" style="padding-left: 45%;">
-            <div class="collapse navbar-collapse px-2" id="navbarSupportedContent">
-                <a class="nav-link px-2" href="../index.html">Home</a>
-                <a class="nav-link px-2" href="../anime-list.html">Anime List</a>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="nav-link" href="../index.html">Home</a>
+                <a class="nav-link" href="../anime-list.html">Anime List</a>
             </div>
         </nav>
         <h1>User Profile</h1>
@@ -121,88 +113,155 @@
     <main>
         <section class="profile-section">
             <div class="profile-card">
-                <form id="myForm" onsubmit="return validateForm()">
-                    Name: <input type="text" id="name" name="name"><span id="nameError" class="error"></span><br><br>
-                    Email: <input type="email" id="email" name="email"><span id="emailError" class="error"></span><br><br>
-                    Age: <input type="number" id="age" name="age" min="18"><span id="ageError" class="error"></span><br><br>
+                <form id="myForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <span id="nameError" class="error"></span>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="emailError" class="error"></span>
+
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="18" required>
+                    <span id="ageError" class="error"></span>
+
                     <input type="submit" value="Submit">
                 </form>
             </div>
         </section>
-    </main>
-    <div class="accordion" id="myAccordion">
-        <div class="accordion-item">
-          <h3>Как зарегестрироваться?</h3>
-          <div class="accordion-content">
-            <p>Введите логин, почту и ваш возраст</p>
+        <section class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="accordion" id="faqAccordion">
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeading1">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                          Question 1: What is Animedium?
+                      </button>
+                  </h2>
+                  <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                          Animedium is an anime-watching platform that allows users to discover and stream their favorite anime.
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeading2">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                          Question 2: How do I create an account?
+                      </button>
+                  </h2>
+                  <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                          To create an account, click the "Sign Up" button on the homepage and fill in your details.
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeading3">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                          Question 3: Can I download anime from Animedium?
+                      </button>
+                  </h2>
+                  <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                          No, Animedium currently supports only online streaming and does not allow downloading of content.
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="accordion-item">
-          <h3>Question 2</h3>
-          <div class="accordion-content">
-            <p>Answer 2 goes here.  This is some example content for the second accordion item.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h3>Question 3</h3>
-          <div class="accordion-content">
-            <p>Answer 3 goes here.  This is some example content for the third accordion item.</p>
-          </div>
-        </div>
-      </div>
-      
-      <button id="theme-toggle">Переключить тему</button>
+      </section>      
+      <button id="theme-toggle">Dark-mode</button>
       <p id="datetime"></p>
+    </main>
+
     <footer>
         <p>&copy; 2024 Animedium.</p>
         <p>Bexultan Ashenov & Sabitkhanov Askhat</p>
     </footer>
     <script>
-        function validateForm() {
-          let name = document.getElementById("name").value;
-          let email = document.getElementById("email").value;
-          let age = document.getElementById("age").value;
-          let isValid = true;
-        
-          document.getElementById("nameError").innerHTML = "";
-          document.getElementById("emailError").innerHTML = "";
-          document.getElementById("ageError").innerHTML = "";
-        
-          if (name == "") {
-            document.getElementById("nameError").innerHTML = "Name is required";
-            isValid = false;
-          }
-          if (email == "") {
-            document.getElementById("emailError").innerHTML = "Email is required";
-            isValid = false;
-          }
-          if (age == "") {
-            document.getElementById("ageError").innerHTML = "Age is required";
-            isValid = false;
-          }
-        
-          return isValid;
+        // Form Validation
+        const form = document.getElementById('myForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting by default
+
+            let isValid = true;
+            
+            // Name validation
+            const name = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            if (name.value.trim() === "") {
+                nameError.textContent = "Name is required";
+                isValid = false;
+            } else {
+                nameError.textContent = "";
+            }
+
+            // Email validation
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email.value)) {
+                emailError.textContent = "Enter a valid email address";
+                isValid = false;
+            } else {
+                emailError.textContent = "";
+            }
+
+            // Age validation
+            const age = document.getElementById('age');
+            const ageError = document.getElementById('ageError');
+            if (age.value < 18) {
+                ageError.textContent = "You must be at least 18 years old";
+                isValid = false;
+            } else {
+                ageError.textContent = "";
+            }
+
+            // If all fields are valid, submit form
+            if (isValid) {
+                form.submit();
+            }
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-theme');
         }
-        //
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+
+        // Accordion Functionality
         const accordionItems = document.querySelectorAll('.accordion-item');
-        
         accordionItems.forEach(item => {
-        item.addEventListener('click', () => {
-            item.classList.toggle('active');
+            const content = item.querySelector('.accordion-content');
+            content.style.maxHeight = '0px';
+            item.addEventListener('click', () => {
+                // Close all accordion items
+                accordionItems.forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.accordion-content').style.maxHeight = '0px';
+                });
+                // Open clicked item
+                if (!item.classList.contains('active')) {
+                    item.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
             });
         });
-        //
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
 
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-theme');  
-            body.classList.toggle('dark-theme-text');    
-        });
-                //
-        const dateTimeElement = document.getElementById("datetime");
-        const now = new Date();
-        dateTimeElement.textContent = now.toLocaleString();
-        </script>
+        // Real-Time Date and Time
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById('datetime');
+            const now = new Date();
+            dateTimeElement.textContent = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000); // Update every second
+    </script>
 </body>
 </html>
