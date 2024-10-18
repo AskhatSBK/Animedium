@@ -129,11 +129,11 @@
             background-color: #f9f9f9;
         }
         body.dark-theme .faq-section {
-            background-color: #444;
+            background-color: #333;
             color: white;
         }
         .accordion-button {
-            background-color: #343a4000;
+            background-color: #343a40;
             color: white;
         }
         body.dark-theme .accordion-button {
@@ -159,7 +159,7 @@
             padding: 10px;
         }
         body.dark-theme footer {
-            background-color: #111;
+            background-color: #343a40;
         }
     </style>
 </head>
@@ -212,8 +212,7 @@
             </div>
         </div>
       </section>
-      <button id="subscribeBtn">Subscribe</button>
-
+      <button id="subscribeBtn" type="button" class="btn btn-outline-danger">Subscribe</button>
       <div id="popupForm" class="popup">
           <div class="popup-content">
               <span class="close">&times;</span>
@@ -225,8 +224,7 @@
               </form>
           </div>
       </div>      
-      <button id="theme-toggle">Dark-mode</button>
-      <p id="datetime"></p>
+      <button type="button" class="btn btn-outline-secondary" id="theme-toggle">Dark-mode</button>
     </main>
 
     <footer>
