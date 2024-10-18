@@ -71,14 +71,40 @@
         .accordion {
             width: 100%;
             max-width: 600px;
-            margin: 20px auto;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
         }
-        .accordion-item h3 {
-            font-size: 1.2rem;
+
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
         }
-        #theme-toggle {
-            margin-top: 20px;
+
+        .accordion-header {
+            background-color: #f7f7f7;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
+
+        .accordion-header:hover {
+            background-color: #e2e2e2;
+        }
+
+        .accordion-content {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .active .accordion-content {
+            padding: 15px;
+            max-height: 100px; /* Adjust based on content */
+        }
+        
         html, body {
         height: 100%;
         margin: 0;
@@ -107,7 +133,7 @@
             color: white;
         }
         .accordion-button {
-            background-color: #343a40;
+            background-color: #343a4000;
             color: white;
         }
         body.dark-theme .accordion-button {
@@ -121,7 +147,7 @@
             color: #343a40;
         }
         body.dark-theme .accordion-body {
-            background-color: #555;
+            background-color: #555555;
             color: white;
         }
 
@@ -135,13 +161,6 @@
         body.dark-theme footer {
             background-color: #111;
         }
-
-
-        
-        #theme-toggle {
-            margin-top: 20px;
-        }
-        
     </style>
 </head>
 <body>
@@ -178,44 +197,20 @@
         </section>
         <section class="faq-section">
           <h2>Frequently Asked Questions</h2>
-          <div class="accordion" id="faqAccordion">
-              <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeading1">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
-                          Question 1: What is Animedium?
-                      </button>
-                  </h2>
-                  <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
-                      <div class="accordion-body">
-                          Animedium is an anime-watching platform that allows users to discover and stream their favorite anime.
-                      </div>
-                  </div>
-              </div>
-              <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeading2">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-                          Question 2: How do I create an account?
-                      </button>
-                  </h2>
-                  <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
-                      <div class="accordion-body">
-                          To create an account, click the "Sign Up" button on the homepage and fill in your details.
-                      </div>
-                  </div>
-              </div>
-              <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeading3">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-                          Question 3: Can I download anime from Animedium?
-                      </button>
-                  </h2>
-                  <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
-                      <div class="accordion-body">
-                          No, Animedium currently supports only online streaming and does not allow downloading of content.
-                      </div>
-                  </div>
-              </div>
-          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">Question 1: What is Animedium?</div>
+                <div class="accordion-content">Animedium is an anime-watching platform that allows users to discover and stream their favorite anime.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Question 2: How do I create an account?</div>
+                <div class="accordion-content">To create an account, click the "Sign Up" button on the homepage and fill in your details.</div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Question 3: Can I download anime from Animedium?</div>
+                <div class="accordion-content">No, Animedium currently supports only online streaming and does not allow downloading of content.</div>
+            </div>
+        </div>
       </section>
       <button id="subscribeBtn">Subscribe</button>
 
@@ -296,21 +291,10 @@
         });
 
         // Accordion Functionality
-        const accordionItems = document.querySelectorAll('.accordion-item');
-        accordionItems.forEach(item => {
-            const content = item.querySelector('.accordion-content');
-            content.style.maxHeight = '0px';
-            item.addEventListener('click', () => {
-                // Close all accordion items
-                accordionItems.forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.accordion-content').style.maxHeight = '0px';
-                });
-                // Open clicked item
-                if (!item.classList.contains('active')) {
-                    item.classList.add('active');
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                }
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
             });
         });
     </script>
