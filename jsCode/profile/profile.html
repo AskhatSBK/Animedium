@@ -135,7 +135,9 @@
         body.dark-theme footer {
             background-color: #111;
         }
-
+        body.sub-section {
+            color: #111;
+        }
     </style>
 </head>
 <body>
@@ -210,21 +212,22 @@
                   </div>
               </div>
           </div>
-      </section>
-      <button id="subscribeBtn">Subscribe</button>
-
-      <div id="popupForm" class="popup">
-          <div class="popup-content">
-              <span class="close">&times;</span>
-              <h2>Subscribe</h2>
-              <form id="subscribeForm">
-                  <label for="email">Email:</label>
-                  <input type="email" id="subscribeEmail" required>
-                  <input type="submit" value="Submit">
-              </form>
-          </div>
-      </div>      
-      <button id="theme-toggle">Dark-mode</button>
+        </section>
+        <section class="sub-section">
+            <button id="subscribeBtn">Subscribe</button>
+                <div id="popupForm" class="popup">
+                    <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <h2 style="color: black;">Subscribe</h2>
+                        <form id="subscribeForm">
+                            <label for="email" style="color: black;"">Email:</label>
+                            <input type="email" id="subscribeEmail" required>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>      
+            <button id="theme-toggle">Dark-mode</button>
+        </section>
       <p id="datetime"></p>
     </main>
 
@@ -236,7 +239,7 @@
         // Form Validation
         const form = document.getElementById('myForm');
         form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form from submitting by default
+            event.preventDefault();
 
             let isValid = true;
             
