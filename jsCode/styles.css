@@ -77,8 +77,8 @@ h1, h2, h3 {
 
 .card img {
     width: 100%;
-    height: 300px; /* Задаем фиксированную высоту */
-    object-fit: cover; /* Изображение масштабируется и обрезается */
+    height: 300px; 
+    object-fit: cover;
 }
 
 .player-container {
