@@ -39,3 +39,16 @@ window.onclick = function(event) {
     }
 }
 
+const stars = document.querySelectorAll('.star');
+
+stars.forEach(star => {
+  star.addEventListener('click', () => {
+    const rating = star.dataset.rating;
+    // Remove 'selected' class from all stars
+    stars.forEach(s => s.classList.remove('selected'));
+    // Add 'selected' class to the clicked star and all stars before it
+    for (let i = 0; i < rating; i++) {
+      stars[i].classList.add('selected');
+    }
+  });
+});

@@ -23,8 +23,19 @@
             <a href="https://en.wikipedia.org/wiki/Bocchi_the_Rock!"><img src="anime-images/Bocchi.jpg" alt="Bocchi the Rock! Thumbnail"></a>
             <p class="anime-description-full fs-4">Хитори «Бокки» Готo — замкнутая девушка. В средней школе она начала играть на гитаре, желая присоединиться к группе. Но поскольку у нее не было друзей, она в итоге занималась игрой на гитаре по шесть часов каждый день в одиночку. Став опытным гитаристом, она выкладывала видео, на которых она играет на гитаре, под псевдонимом «Герой гитары» и фантазировала о выступлении на школьном культурном фестивале. Но она не только не могла найти себе товарищей по группе, прежде чем она это осознала, она училась в старшей школе и все еще не могла завести ни одного друга! Однажды Нидзика Идзичи, барабанщик Kessoku Band, связался с ней. И из-за этого ее повседневная жизнь начала понемногу меняться.</p>
         </section>
+
+        <div class="rating">
+          <div class="star" data-rating="1">★</div>
+          <div class="star" data-rating="2">★</div>
+          <div class="star" data-rating="3">★</div>
+          <div class="star" data-rating="4">★</div>
+          <div class="star" data-rating="5">★</div>
+        </div>
+
         <section class="player-container">
+
             <h2>Cмотреть Bocchi the Rock!</h2>
+
             <div style="width: 640px; margin: 10px;">
                 <a href="https://youtu.be/SyMMZF5zNW4?si=S9q_f8x1BRyx9M90" target="_blank"><button type="button" class="btn btn-secondary">Trailer</button></a>
                 <button type="button" class="btn btn-secondary">Season 1</button>
@@ -44,5 +55,20 @@
         <p>&copy; 2024 Animedium.</p>
         <p>Bexultan Ashenov & Sabitkhanov Askhat</p>
     </footer>
+    <script>
+        const stars = document.querySelectorAll('.star');
+
+        stars.forEach(star => {
+        star.addEventListener('click', () => {
+            const rating = star.dataset.rating;
+            // Remove 'selected' class from all stars
+            stars.forEach(s => s.classList.remove('selected'));
+            // Add 'selected' class to the clicked star and all stars before it
+            for (let i = 0; i < rating; i++) {
+            stars[i].classList.add('selected');
+            }
+        });
+        });
+    </script>
 </body>
 </html>

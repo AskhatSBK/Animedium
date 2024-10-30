@@ -37,6 +37,21 @@ h1, h2, h3 {
     margin: 15px 0;
 }
 
+footer {
+    text-align: center;
+    padding: 20px 0px;
+    background-color: #333;
+    color: white;
+    bottom: 0;
+    width: 100%;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .main {
     padding: 15px;
 }
@@ -116,15 +131,6 @@ h1, h2, h3 {
     background-color: #555;
 }
 
-footer {
-    text-align: center;
-    padding: 20px 0px;
-    background-color: #333;
-    color: white;
-    bottom: 0;
-    width: 100%;
-}
-
 .anime-description {
     display: flex;
     flex-direction: column;
@@ -151,11 +157,6 @@ footer {
     line-height: 140%;
     align-items: center;
     padding: 10px 5%;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 .filter-sidebar {
@@ -198,6 +199,22 @@ a {
 
 .col {
     padding: 4px;
+}
+
+.star {
+    font-size: 2em; /* Adjust star size as needed */
+    color: gray; /* Default color */
+    cursor: pointer;
+    display: inline-block; /* Allows easy arrangement of stars */
+    margin: 0 5px; /* Spacing between stars */
+  }
+
+.star.selected {
+    color: gold; /* Color when selected */
+}
+
+.rating {
+    margin-left: 28%;
 }
 
 #myVideo {

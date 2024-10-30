@@ -23,7 +23,18 @@
             <a href="https://en.wikipedia.org/wiki/Ghost_in_the_Shell"><img src="anime-images/GITS.jpg" alt="Ghost In The Shell Thumbnail"></a>
             <p class="anime-description-full fs-4">Год 2029. Мир опутан информационными сетями. Люди интегрированы со своими машинами. Кибертехнологии позволяют улучшить и заменить любую часть тела. А «Девятый отдел», спецотряд японской полиции, защищает общество от новых опасностей. Один из лидеров отдела, майор Мoтоко Кусанаги еще в детстве перенесла полную кибернетизацию организма, и теперь «призрак» ее сознания заперт в безупречных механических «доспехах».</p>
         </section>
+
+        
+        <div class="rating">
+            <div class="star" data-rating="1">★</div>
+            <div class="star" data-rating="2">★</div>
+            <div class="star" data-rating="3">★</div>
+            <div class="star" data-rating="4">★</div>
+            <div class="star" data-rating="5">★</div>
+          </div>
+  
         <section class="player-container">
+
             <h2>Cмотреть Ghost in the Shell</h2>
             <div style="width: 640px; margin: 10px;">
                 <a href="https://youtu.be/8RF09G8Ymqg?si=AGRCYUAUz0nt5tNY" target="_blank"><button type="button" class="btn btn-secondary">Trailer</button></a>
@@ -44,5 +55,20 @@
         <p>&copy; 2024 Animedium. All rights reserved.</p>
         <p>Bexultan Ashenov & Sabitkhanov Askhat</p>
     </footer>
+    <script>
+        const stars = document.querySelectorAll('.star');
+
+        stars.forEach(star => {
+        star.addEventListener('click', () => {
+            const rating = star.dataset.rating;
+            // Remove 'selected' class from all stars
+            stars.forEach(s => s.classList.remove('selected'));
+            // Add 'selected' class to the clicked star and all stars before it
+            for (let i = 0; i < rating; i++) {
+            stars[i].classList.add('selected');
+            }
+        });
+        });
+    </script>
 </body>
 </html>

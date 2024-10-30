@@ -24,6 +24,15 @@
             <p class="anime-description-full fs-4">Мир, в котором демоны питаются людьми, а те об этом даже не догадываются. Когда-то давно самый могущественный демон был повержен, а части его тела разбросаны по свету. Тот, кто сможет их собрать и поглотить, получит безграничную власть и даже сможет уничтожить человечество.
                 Физически развитого старшеклассника Юдзи Итадори волнуют насущные проблемы — почти всё время парень проводит в больнице с дедушкой, поэтому, чтобы отвязаться от настырных предложений вступить в спортивные клубы, записывается в оккультный. И внезапно оказывается в эпицентре борьбы за людские судьбы, когда его приятели снимают заклятье с некоего магического артефакта.</p>
         </section>
+
+        <div class="rating">
+            <div class="star" data-rating="1">★</div>
+            <div class="star" data-rating="2">★</div>
+            <div class="star" data-rating="3">★</div>
+            <div class="star" data-rating="4">★</div>
+            <div class="star" data-rating="5">★</div>
+          </div>
+  
         <section class="player-container">
             <h2>Cмотреть Jutsu Kaisen</h2>
             <div style="width: 640px; margin: 10px;">
@@ -45,5 +54,20 @@
         <p>&copy; 2024 Animedium. All rights reserved.</p>
         <p>Bexultan Ashenov & Sabitkhanov Askhat</p>
     </footer>
+    <script>
+        const stars = document.querySelectorAll('.star');
+
+        stars.forEach(star => {
+        star.addEventListener('click', () => {
+            const rating = star.dataset.rating;
+            // Remove 'selected' class from all stars
+            stars.forEach(s => s.classList.remove('selected'));
+            // Add 'selected' class to the clicked star and all stars before it
+            for (let i = 0; i < rating; i++) {
+            stars[i].classList.add('selected');
+            }
+        });
+        });
+    </script>
 </body>
 </html>

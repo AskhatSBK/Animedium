@@ -25,7 +25,17 @@
                 модификациями тела. Имея все, что можно потерять, он решает остаться в живых, став Edgerunner, наемником-преступником, 
                 также известным как Cyberpunk.</p>
         </section>
+
+        <div class="rating">
+            <div class="star" data-rating="1">★</div>
+            <div class="star" data-rating="2">★</div>
+            <div class="star" data-rating="3">★</div>
+            <div class="star" data-rating="4">★</div>
+            <div class="star" data-rating="5">★</div>
+          </div>
+  
         <section class="player-container">
+
             <h2>Cмотреть Cyberpunk: Edgerunners</h2>
             <div style="width: 640px; margin: 10px;">
                 <a href="https://youtu.be/JtqIas3bYhg?si=DGJNXe-w3yCi3q9-" target="_blank"><button type="button" class="btn btn-secondary">Trailer</button></a>
@@ -46,5 +56,20 @@
         <p>&copy; 2024 Animedium. All rights reserved.</p>
         <p>Bexultan Ashenov & Sabitkhanov Askhat</p>
     </footer>
+    <script>
+        const stars = document.querySelectorAll('.star');
+
+        stars.forEach(star => {
+        star.addEventListener('click', () => {
+            const rating = star.dataset.rating;
+            // Remove 'selected' class from all stars
+            stars.forEach(s => s.classList.remove('selected'));
+            // Add 'selected' class to the clicked star and all stars before it
+            for (let i = 0; i < rating; i++) {
+            stars[i].classList.add('selected');
+            }
+        });
+        });
+    </script>
 </body>
 </html>
