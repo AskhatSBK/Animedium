@@ -245,4 +245,8 @@ a {
     }
 }
 
+.nav-link.active {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* Text color for active state */
+}
 

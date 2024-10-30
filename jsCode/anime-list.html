@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="profile/profile.css">
 </head>
-<div class="profile-container">
-    <a href="profile/profile.html" class="profile-button">
-        <img src="profile/profile-icon.png" alt="Profile Icon" class="profile-icon">
-    </a>
-</div>
 <body>
+    <div class="profile-container">
+        <a href="profile/profile.html" class="profile-button" aria-label="Profile">
+            <img src="profile/profile-icon.png" alt="Profile Icon" class="profile-icon">
+        </a>
+    </div>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light" style="padding-left: 45%;">
             <div class="collapse navbar-collapse px-2" id="navbarSupportedContent">
@@ -25,35 +25,35 @@
     </header>
     <main>
         <section class="anime-grid">
-            <a href="Bocchi.html">
+            <a href="Bocchi.html" tabindex="0" aria-label="Bocchi the Rock!">
                 <div class="card" style="width: auto;">
                     <img class="card-img-top" src="anime-images/Bocchi.jpg" alt="Bocchi the Rock! Thumbnail">
                     <div class="card-body">
-                    <h5 class="card-title">Bocchi the Rock!</h5>
+                        <h5 class="card-title">Bocchi the Rock!</h5>
                     </div>
                 </div>
             </a>
-            <a href="GhostInTheShell.html">
+            <a href="GhostInTheShell.html" tabindex="0" aria-label="Ghost in the Shell">
                 <div class="card" style="width: auto;">
                     <img class="card-img-top" src="anime-images/GITS.jpg" alt="Ghost in the Shell">
                     <div class="card-body">
-                    <h5 class="card-title">Ghost in the Shell</h5>
+                        <h5 class="card-title">Ghost in the Shell</h5>
                     </div>
                 </div>
             </a>
-            <a href="CyberPunkER.html">
+            <a href="CyberPunkER.html" tabindex="0" aria-label="Cyberpunk: Edgerunners">
                 <div class="card" style="width: auto;">
                     <img class="card-img-top" src="anime-images/CPER.jpg" alt="CyberPunkER">
                     <div class="card-body">
-                    <h5 class="card-title">Cyberpunk: Edgerunners</h5>
+                        <h5 class="card-title">Cyberpunk: Edgerunners</h5>
                     </div>
                 </div>
             </a>
-            <a href="Jujutsu-Kaisen.html">
+            <a href="Jujutsu-Kaisen.html" tabindex="0" aria-label="Jujutsu Kaisen">
                 <div class="card" style="width: auto;">
-                    <img class="card-img-top" src="anime-images/JK.jpg" alt="JujutsuKaisen">
+                    <img class="card-img-top" src="anime-images/JK.jpg" alt="Jujutsu Kaisen">
                     <div class="card-body">
-                    <h5 class="card-title">JujutsuKaisen</h5>
+                        <h5 class="card-title">Jujutsu Kaisen</h5>
                     </div>
                 </div>
             </a>
@@ -72,5 +72,6 @@
             </div>
         </div>
     </footer>
+    <script src="navigation.js" defer></script>
 </body>
 </html>
