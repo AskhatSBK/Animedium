@@ -34,10 +34,9 @@
             <div class="star" data-rating="4">★</div>
             <div class="star" data-rating="5">★</div>
             <p id="rating-display" style="padding-left: 10px;"></p>
-          </div>
+        </div>
   
         <section class="player-container">
-
             <h2>Cмотреть Cyberpunk: Edgerunners</h2>
             <div style="width: 640px; margin: 10px;">
                 <a href="https://youtu.be/JtqIas3bYhg?si=DGJNXe-w3yCi3q9-" target="_blank"><button type="button" class="btn btn-secondary">Trailer</button></a>
@@ -58,32 +57,7 @@
         <p>&copy; 2024 Animedium. All rights reserved.</p>
         <p>Bexultan Ashenov & Sabitkhanov Askhat</p>
     </footer>
-    <script>
-const stars = document.querySelectorAll('.star');
-const ratingDisplay = document.getElementById('rating-display');
-
-function getRatingDescription(rating) {
-  switch (rating) {
-    case "1": return "Ужасно";
-    case "2": return "Плохо";
-    case "3": return "Средне";
-    case "4": return "Хорошо";
-    case "5": return "Отлично";
-    default: return "";
-  }
-}
-
-stars.forEach(star => {
-  star.addEventListener('click', () => {
-    const rating = star.dataset.rating;
-    stars.forEach(s => s.classList.remove('selected'));
-    for (let i = 0; i < rating; i++) {
-      stars[i].classList.add('selected');
-    }
-    ratingDisplay.textContent = `Вы выбрали рейтинг: ${rating} звезд (${getRatingDescription(rating)}).`;
-  });
-});
-    </script>
+    <script src="animecard.js" defer></script>
     <script src="navigation.js" defer></script>
 </body>
 </html>

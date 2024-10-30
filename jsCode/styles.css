@@ -250,6 +250,7 @@ a {
     color: white; /* Text color for active state */
 }
 
+/* Add this to your styles.css */
 .star {
     transition: transform 0.2s ease; /* Smooth scaling effect */
     cursor: pointer;
