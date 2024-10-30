@@ -1,0 +1,17 @@
+.star {
+    transition: transform 0.2s ease; /* Smooth scaling effect */
+    cursor: pointer;
+}
+
+.star.selected {
+    transform: scale(1.5); /* Enlarge selected star */
+}
+
+button {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth color change and scaling */
+}
+
+button:hover {
+    background-color: #495057; /* Darker button color on hover */
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+}
