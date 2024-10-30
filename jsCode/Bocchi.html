@@ -30,8 +30,8 @@
           <div class="star" data-rating="3">★</div>
           <div class="star" data-rating="4">★</div>
           <div class="star" data-rating="5">★</div>
+          <p id="rating-display" style="padding-left: 10px;"></p>
         </div>
-
         <section class="player-container">
 
             <h2>Cмотреть Bocchi the Rock!</h2>
@@ -56,19 +56,30 @@
         <p>Bexultan Ashenov & Sabitkhanov Askhat</p>
     </footer>
     <script>
-        const stars = document.querySelectorAll('.star');
+const stars = document.querySelectorAll('.star');
+const ratingDisplay = document.getElementById('rating-display');
 
-        stars.forEach(star => {
-        star.addEventListener('click', () => {
-            const rating = star.dataset.rating;
-            // Remove 'selected' class from all stars
-            stars.forEach(s => s.classList.remove('selected'));
-            // Add 'selected' class to the clicked star and all stars before it
-            for (let i = 0; i < rating; i++) {
-            stars[i].classList.add('selected');
-            }
-        });
-        });
+function getRatingDescription(rating) {
+  switch (rating) {
+    case "1": return "Ужасно";
+    case "2": return "Плохо";
+    case "3": return "Средне";
+    case "4": return "Хорошо";
+    case "5": return "Отлично";
+    default: return "";
+  }
+}
+
+stars.forEach(star => {
+  star.addEventListener('click', () => {
+    const rating = star.dataset.rating;
+    stars.forEach(s => s.classList.remove('selected'));
+    for (let i = 0; i < rating; i++) {
+      stars[i].classList.add('selected');
+    }
+    ratingDisplay.textContent = `Вы выбрали рейтинг: ${rating} звезд (${getRatingDescription(rating)}).`;
+  });
+});
     </script>
 </body>
 </html>
