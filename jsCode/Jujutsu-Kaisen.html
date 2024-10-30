@@ -47,7 +47,10 @@
             </div>
             <div class="controls">
                 <button type="button" class="btn btn-dark">Previous</button>
-                <button type="button" class="btn btn-dark">Play/Pause</button>
+                <audio id="myAudio">
+                    <source src="openingJK.mp3" type="audio/mpeg">
+                </audio>
+                <button type="button" class="btn btn-dark" onclick="togglePlay()">Play/Pause</button>
                 <button type="button" class="btn btn-dark" style="width: 82px !important;">Next</button>
             </div>
         </section>
@@ -57,6 +60,20 @@
         <p>Bexultan Ashenov & Sabitkhanov Askhat</p>
     </footer>
     <script>
+        // Получаем элемент аудио и кнопку по id
+  const audio = document.getElementById("myAudio");
+  const playPauseBtn = document.getElementById("playPauseBtn");
+
+  // Функция для переключения воспроизведения и паузы
+  function togglePlay() {
+    if (audio.paused) {
+      audio.play();
+      playPauseBtn.textContent = "Пауза"; // Меняем текст на "Пауза"
+    } else {
+      audio.pause();
+      playPauseBtn.textContent = "Воспроизвести"; // Меняем текст на "Воспроизвести"
+    }
+  }
 const stars = document.querySelectorAll('.star');
 const ratingDisplay = document.getElementById('rating-display');
 
