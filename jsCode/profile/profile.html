@@ -137,16 +137,16 @@
     
         showJokeButton.addEventListener('click', () => {
             getJoke();
-            popup.style.display = 'flex'; // Show the popup
+            popup.style.display = 'flex'; 
         });
     
         closeButton.addEventListener('click', () => {
-            popup.style.display = 'none'; // Close the popup
+            popup.style.display = 'none';
         });
     
         window.addEventListener('click', (event) => {
             if (event.target === popup) {
-                popup.style.display = 'none'; // Close the popup if clicked outside
+                popup.style.display = 'none';
             }
         });
     </script>
