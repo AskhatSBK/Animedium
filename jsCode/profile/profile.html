@@ -23,7 +23,7 @@
     <main>
         <section class="profile-section">
             <div class="profile-card">
-                <form id="loginForm">
+                <form id="registerForm">
                     <label for="name">Username</label>
                     <input type="text" id="loginUsername" name="name" required>
                     <span id="nameError" class="error"></span>
@@ -32,7 +32,7 @@
                     <input type="text" id="loginPassword" name="password" required>
                     <span id="passwdError" class="error"></span>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" id="loggedIn">
                     <a href="SignIn.html" style="text-decoration: underline; color: blue;">Don't have an account yet?</a>
                 </form>
             </div>
@@ -146,22 +146,11 @@
                 popup.style.display = 'none';
             }
         });
-
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
         event.preventDefault();
-
-        const username = document.getElementById("loginUsername").value;
-        const password = document.getElementById("loginPassword").value;
-        const storedPassword = localStorage.getItem(username);
-
-        if (storedPassword && storedPassword === password) {
-            localStorage.setItem("loggedInUser", username);
-            displayWelcomeMessage(username);
-        } else {
-            alert("Invalid username or password.");
-        }
-    });
-
+            alert("User logged in successfully!");
+            window.location.href = "LogIn.html";
+        });
     </script>
     <script src="profile.js"></script>
     <script src="../JavaScript.js"></script>
