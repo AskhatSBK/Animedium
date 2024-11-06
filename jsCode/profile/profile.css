@@ -390,6 +390,11 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+#popupForm {
+    display: none;
+}
+
 .popup-content {
     background-color: white;
     padding: 20px;

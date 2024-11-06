@@ -265,6 +265,5 @@ button {
 }
 
 button:hover {
-    background-color: #495057; /* Darker button color on hover */
     transform: scale(1.1); /* Slightly enlarge button on hover */
 }
