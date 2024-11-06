@@ -59,7 +59,22 @@
         <p>&copy; 2024 Animedium. All rights reserved.</p>
         <p>Bexultan Ashenov & Sabitkhanov Askhat</p>
     </footer>
+    <script>
+    const audio = document.getElementById("myAudio");
+    const playPauseBtn = document.getElementById("playPauseBtn");
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+        playPauseBtn.textContent = "Пауза";
+      } else {
+        audio.pause();
+        playPauseBtn.textContent = "Воспроизвести";
+      }
+    }
+    </script>
     <script src="animecard.js" defer></script>
     <script src="navigation.js" defer></script>
+    <script src="JavaScript.js" defer></script>
 </body> 
 </html>
