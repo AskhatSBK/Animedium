@@ -33,7 +33,7 @@
                     <span id="emailError" class="error"></span>
 
                     <label for="age">Age</label>
-                    <input type="number" id="age" name="age" min="18" required>
+                    <input type="number" id="age" name="age" min="5" required>
                     <span id="ageError" class="error"></span>
 
                     <label for="password">Password</label>
@@ -59,14 +59,14 @@
         if (localStorage.getItem(username)) {
             alert("Username already exists! Try another.");
         } else {
+            console.log(username, password)
             localStorage.setItem(username, password);
             alert("User registered successfully!");
-            window.location.href = "LogIn.html";
+            window.location.href = "profile.html";
         }
     });
-
     </script>
-    <script src="navigation.js" defer></script>
-    <script src="profile/progile.js" defer></script>
+    <script src="profile.js"></script>
+    <script src="../navigation.js" defer></script>
 </body>
 </html>

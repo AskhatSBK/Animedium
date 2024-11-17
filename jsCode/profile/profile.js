@@ -1,5 +1,5 @@
 // Form Validation
-const form = document.getElementById('myForm');
+const form = document.getElementById('registerForm');
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     
@@ -98,7 +98,4 @@ window.addEventListener('click', (event) => {
         popupForm.style.display = 'none';
     }
 });
-
-
-// Login user
 
