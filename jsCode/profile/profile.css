@@ -273,7 +273,7 @@ body.dark-theme .profile-card {
 }
 
 
-input[type="text"], input[type="email"], input[type="number"] {
+input[type="text"], input[type="email"], input[type="number"], input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
