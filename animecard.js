@@ -3,11 +3,11 @@ const ratingDisplay = document.getElementById('rating-display');
 
 function getRatingDescription(rating) {
     switch (rating) {
-        case "1": return "Ужасно";
-        case "2": return "Плохо";
-        case "3": return "Средне";
-        case "4": return "Хорошо";
-        case "5": return "Отлично";
+        case "1": return "Very Bad";
+        case "2": return "Bad";
+        case "3": return "Middle";
+        case "4": return "Good";
+        case "5": return "Amazing";
         default: return "";
     }
 }
@@ -19,6 +19,6 @@ stars.forEach(star => {
         for (let i = 0; i < rating; i++) {
             stars[i].classList.add('selected');
         }
-        ratingDisplay.textContent = `Вы выбрали рейтинг: ${rating} звезд (${getRatingDescription(rating)}).`;
+        ratingDisplay.textContent = `You choose: ${rating} stars (${getRatingDescription(rating)}).`;
     });
 });
