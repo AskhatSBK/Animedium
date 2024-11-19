@@ -359,6 +359,14 @@ body {
     color: black;
 }
 
+.navbar {
+    justify-content: center;
+}
+.navbar-collapse {
+    display: flex;
+    justify-content: center;
+}
+
 .dark-theme {
     background-color: #121212;
     color: white;
