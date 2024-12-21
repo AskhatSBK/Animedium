@@ -252,10 +252,26 @@ a {
     }
 }
 
-body.dark-theme {
-    background-color: #333;
-    color: white;
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
+
+.navbar-light.dark-mode {
+    background-color: #333333;
+}
+
+.card.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #444444;
+}
+
+footer.dark-mode {
+    background-color: #222222;
+    color: #cccccc;
+}
+
 
 .nav-link.active {
     background-color: #007bff; /* Bootstrap primary color */
